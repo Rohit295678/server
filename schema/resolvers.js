@@ -206,7 +206,6 @@ const resolvers = {
     ) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
-
   // Push the new travel data to the existing array
   user.homeData.push({
     waterEmissions, electricityEmissions, naturalGasEmissions, fuelOilEmissions 
@@ -221,7 +220,7 @@ const resolvers = {
 
     addWaste: async (
       parent,
-      { MessFoodEmissions, paperWasteEmissions, metalWasteEmissions, plasticWasteEmissions },
+      { messFoodEmissions, paperWasteEmissions, metalWasteEmissions, plasticWasteEmissions },
       context
     ) => {
       if (context.user) {
@@ -229,7 +228,7 @@ const resolvers = {
 
   // Push the new travel data to the existing array
   user.wasteData.push({
-    MessFoodEmissions, paperWasteEmissions, metalWasteEmissions, plasticWasteEmissions 
+    messFoodEmissions, paperWasteEmissions, metalWasteEmissions, plasticWasteEmissions 
   });
          const updatedUser = await user.save();
 
