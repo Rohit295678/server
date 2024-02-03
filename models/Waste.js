@@ -2,28 +2,28 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const travelSchema = new Schema({
-    fourVheelersEmissions: {
+const WasteSchema = new Schema({
+    messFoodEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
 
-    publicTransitEmissions: {
+    paperWasteEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
 
-    twoVheelersEmissions: {
+    metalWasteEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
-    collegeBusEmissions: {
+    plasticWasteEmissions: {
         type: Number,
         min: 0,
         default: 0,
@@ -33,4 +33,4 @@ const travelSchema = new Schema({
     timestamps: true
   },)
 
-module.exports = travelSchema;
+module.exports = WasteSchema;

@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const homeSchema = require('./Home');
 const travelSchema = require('./Travel');
 const Pledge = require('./Pledge');
+const wasteSchema = require('./Waste');
 
 
 const userSchema = new Schema({
@@ -25,6 +26,7 @@ const userSchema = new Schema({
   },
   homeData: [homeSchema],
   travelData: [travelSchema],
+  wasteData: [wasteSchema],
   pledgeData: [{
     type: Schema.Types.ObjectId,
     ref: 'Pledge'

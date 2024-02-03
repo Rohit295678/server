@@ -6,16 +6,28 @@ scalar DateTime
     _id: ID
     waterEmissions: Int
     electricityEmissions: Int
-    heatEmissions: Int
+    naturalGasEmissions: Int
+    fuelOilEmissions: Int
     createdAt: DateTime
     updatedAt: DateTime
   }
 
   type Travel {
     _id: ID
-    vehicleEmissions: Int
+    fourVheelersEmissions: Int
     publicTransitEmissions: Int
-    planeEmissions: Int
+    twoVheelersEmissions: Int
+    collegeBusEmissions: Int
+    createdAt: DateTime
+    updatedAt: DateTime
+  }
+
+  type Waste {
+    _id: ID
+    messFoodEmissions: Int
+    paperWasteEmissions: Int
+    metalWasteEmissions: Int
+    plasticWasteEmissions: Int
     createdAt: DateTime
     updatedAt: DateTime
   }
@@ -34,6 +46,7 @@ scalar DateTime
     email: String
     homeData: [Home]
     travelData: [Travel]
+    wasteData: [Waste]
     pledgeData: [Pledge]
   }
 
@@ -51,16 +64,26 @@ scalar DateTime
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addTravel(
-      vehicleEmissions: Int!
+      fourVheelersEmissions: Int!
       publicTransitEmissions: Int!
-      planeEmissions: Int!
+      twoVheelersEmissions: Int!
+      collegeBusEmissions: Int!
       createdAt: DateTime
     updatedAt: DateTime
     ): User
     addHome(
       waterEmissions: Int!
       electricityEmissions: Int!
-      heatEmissions: Int!
+      naturalGasEmissions: Int!
+      fuelOilEmissions: Int!
+      createdAt: DateTime
+    updatedAt: DateTime
+    ): User
+    addWaste(
+      messFoodEmissions: Int!
+      paperWasteEmissions: Int!
+      metalWasteEmissions: Int!
+      plasticWasteEmissions: Int!
       createdAt: DateTime
     updatedAt: DateTime
     ): User

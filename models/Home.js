@@ -15,7 +15,13 @@ const homeSchema = new Schema({
     default: 0,
     required: true,
   },
-  heatEmissions: {
+  naturalGasEmissions: {
+    type: Number,
+    min: 0,
+    default: 0,
+    required: true,
+  },
+  fuelOilEmissions: {
     type: Number,
     min: 0,
     default: 0,
